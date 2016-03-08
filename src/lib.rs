@@ -195,9 +195,8 @@ pub fn get_by_alias<'a, S: Into<String>>(alias: S) -> Option<ScriptCode<'a>> {
     let alias_str: &str = &alias.into()[..];
 
     for code in all() {
-
         if code.alias.is_some() && code.alias.unwrap() == alias_str {
-            return Some(code.clone());
+            return Some(code);
         }
     }
 
@@ -217,7 +216,7 @@ pub fn get_by_code<'a, S: Into<String>>(code: S) -> Option<ScriptCode<'a>> {
 
     for code in all() {
         if code.code == code_str {
-            return Some(code.clone());
+            return Some(code);
         }
     }
 
@@ -317,7 +316,7 @@ pub fn get_by_name<'a, S: Into<String>>(name: S) -> Option<ScriptCode<'a>> {
 
     for code in all() {
         if code.name == name_str {
-            return Some(code.clone());
+            return Some(code);
         }
     }
 
@@ -338,7 +337,7 @@ pub fn get_by_name_french<'a, S: Into<String>>(name: S) -> Option<ScriptCode<'a>
 
     for code in all() {
         if code.name_french == name_str {
-            return Some(code.clone());
+            return Some(code);
         }
     }
 
@@ -359,7 +358,7 @@ pub fn get_by_num<'a, S: Into<String>>(num: S) -> Option<ScriptCode<'a>> {
 
     for code in all() {
         if code.num == num_str {
-            return Some(code.clone());
+            return Some(code);
         }
     }
 
