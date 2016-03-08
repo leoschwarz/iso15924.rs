@@ -29,6 +29,8 @@
 #[allow(unused_imports)]
 use {ScriptCode, ScriptDate};
 
+/// Retrieve all of the `ScriptCode`s. This is updated automatically via
+/// `make update`.
 #[allow(unused_mut)]
 pub fn all<'a>() -> Vec<ScriptCode<'a>> {
     let mut list: Vec<ScriptCode> = vec![];

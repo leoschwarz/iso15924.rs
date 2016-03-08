@@ -61,6 +61,8 @@ for row in rows:
     name = cells[2].get_text()
     name_french = cells[3].get_text()
 
+    # If the alias cell contains anything more than a single space, then it has
+    # a value (Rust's `Some`), otherwise it is Rust's `None`.
     if len(cells[4].get_text()) < 2:
         alias = 'None'
     else:
@@ -68,13 +70,18 @@ for row in rows:
 
     date_data = cells[5].get_text().split("-")
 
+    # If the date doesn't exist or incorrectly parses into other than 3 items in
+    # a list, then skip this row. The date needs to parse into 3 items in the
+    # list.
     if len(date_data) != 3:
         continue
 
+    # year, month, day
     y = date_data[0]
     m = date_data[1]
     d = date_data[2]
 
+    # Push formatted text for a `ScriptCode`.
     text += '    list.push(ScriptCode {\n'
     text += '        alias: {},\n'.format(alias)
     text += '        code: "{}",\n'.format(code)
@@ -84,11 +91,13 @@ for row in rows:
     text += '        num: "{}",\n'.format(num)
     text += '    });\n'
 
+# Open the file with the Vec of codes.
 all_path = os.path.join(os.path.dirname(__file__), '../src/codes.rs')
 
 with open(all_path, 'r') as f:
     all_file = f.read()
 
+# Concat in the `text` between the beginning and end of the codes file contents.
 current = all_file.rsplit('// Begin.', 1)
 current_e = all_file.rsplit('// End.\n', 1)
 
