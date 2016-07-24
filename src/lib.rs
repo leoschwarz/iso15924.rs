@@ -24,7 +24,7 @@
 // |
 // | - [Wikipedia](http://en.wikipedia.org/wiki/ISO_15924)
 //
-// Originally by taiyaeix on GitHub.
+// Originally by zeyla on GitHub.
 
 mod codes;
 

@@ -25,7 +25,7 @@
 # |
 # | - [wikipedia](https://en.wikipedia.org/wiki/ISO_15924)
 #
-# Originally by taiyaeix on GitHub.
+# Originally by zeyla on GitHub.
 
 from bs4 import BeautifulSoup
 import os

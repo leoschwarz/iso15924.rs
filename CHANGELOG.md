@@ -20,4 +20,4 @@ including the changes to the details of the `Gtld`s themselves):
 
 Initial commit.
 
-[Unreleased]: https://github.com/taiyaeix/gtld-data.rs/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/zeyla/gtld-data.rs/compare/v0.1.0...HEAD
