@@ -2,10 +2,10 @@
 authors = ["Austin Hellyer <hello@austinhellyer.me>"]
 description = "ISO 15924 data."
 documentation = "http://docs.austinhellyer.me/iso15924"
-homepage = "https://github.com/taiyaeix/iso15924.rs"
+homepage = "https://github.com/zeyla/iso15924.rs"
 license = "ISC"
 keywords = ["ISO", "15924"]
 name = "iso15924"
 readme = "README.md"
-repository = "https://github.com/github.com/taiyaeix/gtld-data.rs.git"
+repository = "https://github.com/github.com/zeyla/gtld-data.rs.git"
 version = "0.1.0"

@@ -1,5 +1,5 @@
-[travis-badge]: https://img.shields.io/travis/taiyaeix/iso15924.rs.svg?style=flat-square
-[travis]: https://travis-ci.org/taiyaeix/iso15924.rs
+[travis-badge]: https://img.shields.io/travis/zeyla/iso15924.rs.svg?style=flat-square
+[travis]: https://travis-ci.org/zeyla/iso15924.rs
 [license-badge]: https://img.shields.io/badge/license-ISC-blue.svg?style=flat-square
 [license]: https://opensource.org/licenses/ISC
 
@@ -63,7 +63,7 @@ A full list of examples can be found in the [examples folder] or in the
 
 License info in [LICENSE.md]. Long story short, ISC.
 
-[LICENSE.md]: https://github.com/taiyaeix/gtld-data.rs/blob/master/LICENSE.md
+[LICENSE.md]: https://github.com/zeyla/gtld-data.rs/blob/master/LICENSE.md
 [documentation]: https://docs.austinhellyer.me/iso15924
-[examples folder]: https://github.com/taiyaeix/iso15924.rs/tree/master/examples
+[examples folder]: https://github.com/zeyla/iso15924.rs/tree/master/examples
 [the table]: http://unicode.org/iso15924/iso15924-codes.html
