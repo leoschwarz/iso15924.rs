@@ -7,7 +7,7 @@
   script:
     - du -hs target cargo
     - rustc --version && cargo --version
-    - cargo test --verbose --jobs 1
+    - cargo test --verbose
 
 stable:cargo:
   image: rustdocker/rust:stable
@@ -20,20 +20,6 @@ beta:cargo:
 nightly:cargo:
   image: rustdocker/rust:nightly
   <<: *cargo_test
-
-pages:
-  image: rustdocker/rust:stable
-  stage: deploy
-  only:
-    - master
-  script:
-    - cargo doc
-    - rm -rf public
-    - mkdir public
-    - cp target/doc/* public -r
-  artifacts:
-    paths:
-    - public
 
 variables:
   CARGO_HOME: $CI_PROJECT_DIR/cargo
