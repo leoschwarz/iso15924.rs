@@ -46,15 +46,6 @@ let scripts = iso15924::all();
 ```
 
 
-Retrieve a `ScriptCode` via its 3-digit `num` value:
-
-```rust
-use gtld_data::get_by_num;
-
-let script = get_by_num("070");
-```
-
-
 A full list of examples can be found in the [examples folder] or in the
 [documentation].
 
@@ -63,7 +54,7 @@ A full list of examples can be found in the [examples folder] or in the
 
 License info in [LICENSE.md]. Long story short, ISC.
 
-[LICENSE.md]: https://gitlab.com/kalasi/gtld-data.rs/blob/master/LICENSE.md
+[LICENSE.md]: https://gitlab.com/kalasi/iso15924.rs/blob/master/LICENSE.md
 [documentation]: https://docs.austinhellyer.me/iso15924
 [examples folder]: https://gitlab.com/zeyla/iso15924.rs/tree/master/examples
 [the table]: http://unicode.org/iso15924/iso15924-codes.html
