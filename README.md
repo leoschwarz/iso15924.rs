@@ -63,7 +63,7 @@ A full list of examples can be found in the [examples folder] or in the
 
 License info in [LICENSE.md]. Long story short, ISC.
 
-[LICENSE.md]: https://github.com/zeyla/gtld-data.rs/blob/master/LICENSE.md
+[LICENSE.md]: https://gitlab.com/kalasi/gtld-data.rs/blob/master/LICENSE.md
 [documentation]: https://docs.austinhellyer.me/iso15924
-[examples folder]: https://github.com/zeyla/iso15924.rs/tree/master/examples
+[examples folder]: https://gitlab.com/zeyla/iso15924.rs/tree/master/examples
 [the table]: http://unicode.org/iso15924/iso15924-codes.html
