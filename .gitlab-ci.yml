@@ -5,9 +5,8 @@
       - target/
   stage: test
   script:
-    - du -hs target cargo
     - rustc --version && cargo --version
-    - cargo test --verbose
+    - cargo test -v
 
 stable:cargo:
   image: rustdocker/rust:stable
