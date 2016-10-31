@@ -1,6 +1,12 @@
 .cargo_test_template: &cargo_test
+  cache:
+    paths:
+      - cargo/
+      - target/
   stage: test
   script:
+    - du -hs target cargo
+    - rustc --version && cargo --version
     - cargo test --verbose --jobs 1
 
 stable:cargo:
@@ -28,3 +34,7 @@ pages:
   artifacts:
     paths:
     - public
+
+variables:
+  CARGO_HOME: $CI_PROJECT_DIR/cargo
+  GIT_DEPTH: "1"
