@@ -1,5 +1,5 @@
-[travis-badge]: https://gitlab.com/kalasi/iso15924.rs/badges/master/build.svg
-[travis]: https://gitlab.com/kalasi/iso15924.rs/pipelines
+[travis-badge]: https://github.com/zeyla/iso15924.rs/badges/master/build.svg
+[travis]: https://github.com/zeyla/iso15924.rs/pipelines
 [license-badge]: https://img.shields.io/badge/license-ISC-blue.svg?style=flat-square
 [license]: https://opensource.org/licenses/ISC
 
@@ -54,7 +54,7 @@ A full list of examples can be found in the [examples folder] or in the
 
 License info in [LICENSE.md]. Long story short, ISC.
 
-[LICENSE.md]: https://gitlab.com/kalasi/iso15924.rs/blob/master/LICENSE.md
-[documentation]: https://docs.austinhellyer.me/iso15924
-[examples folder]: https://gitlab.com/kalasi/iso15924.rs/tree/master/examples
+[LICENSE.md]: https://github.com/zeyla/iso15924.rs/blob/master/LICENSE.md
+[documentation]: https://docs.rs/iso15924
+[examples folder]: https://github.com/zeyla/iso15924.rs/tree/master/examples
 [the table]: http://unicode.org/iso15924/iso15924-codes.html
