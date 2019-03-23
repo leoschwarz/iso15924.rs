@@ -1,7 +1,7 @@
 extern crate iso15924;
 
-use iso15924::*;
 use iso15924::ScriptDateError::*;
+use iso15924::*;
 
 #[test]
 fn test_all() {

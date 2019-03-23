@@ -130,9 +130,7 @@ impl ScriptDate {
     ///     _ => false,
     /// });
     /// ```
-    pub fn new(year: u16,
-               month: u16,
-               day: u16) -> Result<ScriptDate, ScriptDateError> {
+    pub fn new(year: u16, month: u16, day: u16) -> Result<ScriptDate, ScriptDateError> {
         if month > 12 {
             Err(ScriptDateError::MonthTooLarge(month))
         } else if month == 0 {
@@ -191,7 +189,7 @@ pub struct ScriptCode<'a> {
 /// ```rust
 /// iso15924::get_by_alias("Ahom").is_some();
 /// ```
-pub fn get_by_alias<'a, S: Into<String>>(alias: S) -> Option<ScriptCode<'a>> {
+pub fn get_by_alias<'a, S: Into<String>>(alias: S) -> Option<&'static ScriptCode<'static>> {
     let alias_str: &str = &alias.into()[..];
 
     for code in all() {
@@ -211,7 +209,7 @@ pub fn get_by_alias<'a, S: Into<String>>(alias: S) -> Option<ScriptCode<'a>> {
 /// iso15924::get_by_code("Blis").is_some();
 /// iso15924::get_by_code("Abza").is_none();
 /// ```
-pub fn get_by_code<'a, S: Into<String>>(code: S) -> Option<ScriptCode<'a>> {
+pub fn get_by_code<'a, S: Into<String>>(code: S) -> Option<&'static ScriptCode<'static>> {
     let code_str: &str = &code.into()[..];
 
     for code in all() {
@@ -268,8 +266,10 @@ pub fn get_by_code<'a, S: Into<String>>(code: S) -> Option<ScriptCode<'a>> {
 ///
 /// let scripts = get_by_date_range(None, None);
 /// ```
-pub fn get_by_date_range<'a>(from: Option<ScriptDate>,
-                         to: Option<ScriptDate>) -> Vec<ScriptCode<'a>> {
+pub fn get_by_date_range<'a>(
+    from: Option<ScriptDate>,
+    to: Option<ScriptDate>,
+) -> Vec<&'static ScriptCode<'a>> {
     let from_do: bool = from.is_some();
     let to_do: bool = to.is_some();
 
@@ -279,7 +279,7 @@ pub fn get_by_date_range<'a>(from: Option<ScriptDate>,
         return vec![];
     }
 
-    let mut codes: Vec<ScriptCode> = vec![];
+    let mut codes: Vec<&'static ScriptCode> = vec![];
 
     for code in all() {
         // If the date of the given `from` is less than that of the `code`, then
@@ -311,7 +311,7 @@ pub fn get_by_date_range<'a>(from: Option<ScriptDate>,
 /// let script2 = get_by_name("Aaaaa");
 /// script2.is_none();
 /// ```
-pub fn get_by_name<'a, S: Into<String>>(name: S) -> Option<ScriptCode<'a>> {
+pub fn get_by_name<'a, S: Into<String>>(name: S) -> Option<&'static ScriptCode<'static>> {
     let name_str: &str = &name.into()[..];
 
     for code in all() {
@@ -332,7 +332,7 @@ pub fn get_by_name<'a, S: Into<String>>(name: S) -> Option<ScriptCode<'a>> {
 ///
 /// get_by_name_french(String::from("aaaaa")).is_none();
 /// ```
-pub fn get_by_name_french<'a, S: Into<String>>(name: S) -> Option<ScriptCode<'a>> {
+pub fn get_by_name_french<'a, S: Into<String>>(name: S) -> Option<&'static ScriptCode<'static>> {
     let name_str: &str = &name.into()[..];
 
     for code in all() {
@@ -353,7 +353,7 @@ pub fn get_by_name_french<'a, S: Into<String>>(name: S) -> Option<ScriptCode<'a>
 ///
 /// get_by_num("000").is_none();
 /// ```
-pub fn get_by_num<'a, S: Into<String>>(num: S) -> Option<ScriptCode<'a>> {
+pub fn get_by_num<'a, S: Into<String>>(num: S) -> Option<&'static ScriptCode<'static>> {
     let num_str: &str = &num.into()[..];
 
     for code in all() {

@@ -50,10 +50,11 @@ for row in rows:
     # 2: name
     # 3: french name
     # 4: alias [Property Value Alias]
-    # 5: date
+    # 5: age
+    # 6: date
     cells = row.find_all('td')
 
-    if len(cells) != 6:
+    if len(cells) != 7:
         continue
 
     code = cells[0].get_text()
@@ -68,7 +69,7 @@ for row in rows:
     else:
         alias = 'Some("{}")'.format(cells[4].get_text())
 
-    date_data = cells[5].get_text().split("-")
+    date_data = cells[6].get_text().split("-")
 
     # If the date doesn't exist or incorrectly parses into other than 3 items in
     # a list, then skip this row. The date needs to parse into 3 items in the
@@ -82,14 +83,18 @@ for row in rows:
     d = date_data[2]
 
     # Push formatted text for a `ScriptCode`.
-    text += '    list.push(ScriptCode {\n'
+    text += '    ScriptCode {\n'
     text += '        alias: {},\n'.format(alias)
     text += '        code: "{}",\n'.format(code)
-    text += '        date: ScriptDate::new({}, {}, {}).unwrap(),\n'.format(y, m, d)
+    text += '        date: ScriptDate {\n'
+    text += '            year: {},\n'.format(y)
+    text += '            month: {},\n'.format(m)
+    text += '            day: {}\n'.format(d)
+    text += '        },\n'
     text += '        name: "{}",\n'.format(name)
     text += '        name_french: "{}",\n'.format(name_french)
     text += '        num: "{}",\n'.format(num)
-    text += '    });\n'
+    text += '    },\n'
 
 # Open the file with the Vec of codes.
 all_path = os.path.join(os.path.dirname(__file__), '../src/codes.rs')

@@ -1,6 +1,6 @@
 extern crate iso15924;
 
-use iso15924::{ScriptDate, get_by_date_range};
+use iso15924::{get_by_date_range, ScriptDate};
 
 fn main() {
     // Retrieve a `ScriptCode` based on a range of `ScriptCode`s' `date`s..
