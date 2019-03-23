@@ -9,7 +9,7 @@ fn test_all() {
     //
     // This number CAN increase without breaking backwards compatibility,
     // but decreasing the number is a BC break.
-    assert!(all().len() == 182);
+    assert!(all().len() == 199);
 }
 
 #[test]
@@ -63,11 +63,11 @@ fn test_get_by_date_range() {
     let t = ScriptDate::new(2012, 1, 1).unwrap();
 
     let r1 = get_by_date_range(Some(f), Some(t));
-    assert!(r1.len() == 62);
+    assert!(r1.len() == 59);
     let r2 = get_by_date_range(Some(f), None);
-    assert!(r2.len() == 112);
+    assert!(r2.len() == 133);
     let r3 = get_by_date_range(None, Some(t));
-    assert!(r3.len() == 132);
+    assert!(r3.len() == 125);
     let r4 = get_by_date_range(None, None);
     assert!(r4.len() == 0);
 }
